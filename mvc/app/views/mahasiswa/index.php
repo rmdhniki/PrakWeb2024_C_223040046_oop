@@ -5,13 +5,28 @@
       <?php Flasher::flash(); ?>
     </div>
   </div>
+
+  <div class="row mb-3">
+    <div class="col-lg-6">
+      <!-- Button trigger modal -->
+      <button type="button" class="btn btn-primary mb-3 tombolTambahData" data-bs-toggle="modal" data-bs-target="#formModal">
+        Tambah Data Mahasiswa
+      </button>
+    </div>
+  </div>
   <div class="row">
     <div class="col-lg-6">
-    <!-- Button trigger modal -->
-    <button type="button" class="btn btn-primary mb-3 tombolTambahData" data-bs-toggle="modal" data-bs-target="#formModal">
-      Tambah Data Mahasiswa
-    </button>
-    <br><br>
+      <form action="<?= BASEURL; ?>/mahasiswa/cari" method="post">
+        <div class="input-group mb-3">
+          <input type="text" class="form-control" placeholder="cari mahasiswa.." name="keyword" id="keyword" autocomplete="off">
+          <button class="btn btn-primary" type="submit" id="tombolCari">Cari</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-lg-6">
       <h3>Daftar Mahasiswa</h3>
         <?php foreach($data['mhs'] as $mhs) : ?>
           <ul class="list-group">
@@ -23,7 +38,7 @@
             </li>
           </ul>
         <?php endforeach ?>
-
+      
     </div>
   </div>
 </div>
@@ -37,7 +52,7 @@
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
-
+      
         <form action="<?= BASEURL; ?>/mahasiswa/tambah" method="post">
         <input type="hidden" name="id" id="id">
         <div class="mb-3">
@@ -70,4 +85,5 @@
         </div>
       </form>
     </div>
-  </div
+  </div>
+</div>
