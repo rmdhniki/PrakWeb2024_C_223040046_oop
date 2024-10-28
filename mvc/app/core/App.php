@@ -33,7 +33,7 @@ class App {
         }
 
         // jalankan controller & method, serta kirimkan params
-        var_dump($this->params); call_user_func_array([$this->controller, $this->method], $this->params,);
+        call_user_func_array([$this->controller, $this->method], $this->params,);
     }
 
     public function parseURL() {
